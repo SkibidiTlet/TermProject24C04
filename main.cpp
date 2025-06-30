@@ -4,7 +4,7 @@
 
 phu 123
 #include <iostream>
-bo dep trai nhat tren doi
+nhu cc 
 
 int main() {
 	std::cout << "Hell  o, World!" << std::endl;
