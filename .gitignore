@@ -1,0 +1,25 @@
+# Visual Studio files
+.vs/
+*/.vs/
+**/.vs/
+*.vsidx
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+FileContentIndex/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# NuGet Packages
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
