@@ -7,7 +7,7 @@ phu 123
 nhu cc 
 
 int main() {
-	std::cout << "Hell  o, World!" << std::endl;
+	std::cout << "Hell  o!" << std::endl;
 	return 0;
 }
 
