@@ -102,13 +102,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\libs\mysql-9.3.0-winx64\include;..\libs\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\libs\mysql-9.3.0-winx64\include;$(ProjectDir)..\libs\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\libs\SFML-2.6.2\lib;..\libs\mysql-9.3.0-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>..\libs\SFML-2.6.2\lib\sfml-audio-d.lib;..\libs\SFML-2.6.2\lib\sfml-graphics-d.lib;..\libs\SFML-2.6.2\lib\sfml-network-d.lib;..\libs\SFML-2.6.2\lib\sfml-system-d.lib;..\libs\SFML-2.6.2\lib\sfml-window-d.lib;..\libs\mysql-9.3.0-winx64\lib\libmysql.dll;..\libs\mysql-9.3.0-winx64\bin\libssl-3-x64.dll;..\libs\mysql-9.3.0-winx64\bin\libcrypto-3-x64.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\libs\SFML-2.6.2\lib;$(ProjectDir)..\libs\mysql-9.3.0-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(ProjectDir)..\libs\SFML-2.6.2\lib\sfml-audio-d.lib;$(ProjectDir)..\libs\SFML-2.6.2\lib\sfml-graphics-d.lib;$(ProjectDir)..\libs\SFML-2.6.2\lib\sfml-network-d.lib;$(ProjectDir)..\libs\SFML-2.6.2\lib\sfml-system-d.lib;$(ProjectDir)..\libs\SFML-2.6.2\lib\sfml-window-d.lib;$(ProjectDir)..\libs\mysql-9.3.0-winx64\lib\libmysql.dll;$(ProjectDir)..\libs\mysql-9.3.0-winx64\bin\libssl-3-x64.dll;$(ProjectDir)..\libs\mysql-9.3.0-winx64\bin\libcrypto-3-x64.dll;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,6 +127,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MusicStore.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
