@@ -1,6 +1,8 @@
 // MusicStore.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #define NOMINMAX
+
+
 #include <iostream>
 #include <windows.h>
 #include <mysql_driver.h>

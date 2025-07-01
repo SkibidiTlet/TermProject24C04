@@ -102,13 +102,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\libs\mysql-9.3.0-winx64\include;..\libs\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\MYSQL\include\jdbc;$(SolutionDir)libs\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\libs\SFML-2.6.2\lib;..\libs\mysql-9.3.0-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>..\libs\SFML-2.6.2\lib\sfml-audio-d.lib;..\libs\SFML-2.6.2\lib\sfml-graphics-d.lib;..\libs\SFML-2.6.2\lib\sfml-network-d.lib;..\libs\SFML-2.6.2\lib\sfml-system-d.lib;..\libs\SFML-2.6.2\lib\sfml-window-d.lib;..\libs\mysql-9.3.0-winx64\lib\libmysql.dll;..\libs\mysql-9.3.0-winx64\bin\libssl-3-x64.dll;..\libs\mysql-9.3.0-winx64\bin\libcrypto-3-x64.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\SFML-2.6.2\lib;$(SolutionDir)libs\MYSQL\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)libs\SFML-2.6.2\lib\sfml-audio-d.lib;$(SolutionDir)libs\SFML-2.6.2\lib\sfml-graphics-d.lib;$(SolutionDir)libs\SFML-2.6.2\lib\sfml-network-d.lib;$(SolutionDir)libs\SFML-2.6.2\lib\sfml-system-d.lib;$(SolutionDir)libs\SFML-2.6.2\lib\sfml-window-d.lib;$(SolutionDir)libs\MYSQL\lib64\vs14\mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
