@@ -20,3 +20,5 @@ This is a **Music Store Management System** developed in **C++**, designed to he
 
 > 🏗️ Built with **clean architecture (3 layers)** and follows **object-oriented programming (OOP)**.
 
+### 📚 Technologies Used:
+
