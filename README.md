@@ -1,4 +1,4 @@
-﻿# Project Title: MusicStore Management System
+﻿# Project Title: Book Store Management System
 
 ## Group member:
 
@@ -11,7 +11,7 @@
 
 ## 📄 Description
 
-This is a **Music Store Management System** developed in **C++**, designed to help users manage music-related business operations effectively.
+This is a **Book Store Management System** developed in **C++**, designed to help users manage music-related business operations effectively.
 
 ### 🔧 Key Features:
 - 🎵 Add, edit, and delete music records
