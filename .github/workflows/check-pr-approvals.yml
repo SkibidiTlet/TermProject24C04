@@ -1,0 +1,59 @@
+name: Check PR Approvals
+
+on:
+  pull_request_review:
+    types: [submitted, dismissed]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-approvals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR has approval
+        id: check_approval
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const prNumber = context.payload.pull_request ? context.payload.pull_request.number : context.payload.number;
+            
+            const reviews = await github.rest.pulls.listReviews({
+              owner,
+              repo,
+              pull_number: prNumber,
+            });
+            
+            const approvals = reviews.data.filter(review => review.state === 'APPROVED');
+            const hasApproval = approvals.length > 0;
+            
+            // Set output for badge creation
+            core.exportVariable('HAS_APPROVAL', hasApproval);
+            
+            // Comment on PR with status
+            const statusMessage = hasApproval 
+              ? '✅ PR này đã có ít nhất 1 approval!'
+              : '⚠️ PR này chưa được approve! Cần ít nhất 1 approval trước khi merge.';
+            
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: prNumber,
+              body: statusMessage
+            });
+            
+            // Create status check
+            const conclusion = hasApproval ? 'success' : 'neutral';
+            await github.rest.checks.create({
+              owner,
+              repo,
+              name: 'PR Approval Status',
+              head_sha: context.payload.pull_request.head.sha,
+              status: 'completed',
+              conclusion: conclusion,
+              output: {
+                title: hasApproval ? 'PR đã được approve' : 'PR cần approval',
+                summary: statusMessage
+              }
+            });
